@@ -1,14 +1,27 @@
-#[allow(dead_code)]
-#[allow(unused_variables)]
+#![allow(dead_code)]
+#![allow(unused_variables)]
+mod sh;
+
 use std::mem;
+
+//Global variable
+const MEANING_OF_LIFE: u8 = 42; //no fixed address - prefer
+
+static STATIC_Z:i32 = 123; //Immutable is memory safe
+
+static mut STATIC_UNSAFE_Z:i32 = 123;  //Mutable is memory unsafe
 
 fn main() {
     println!("Hello, world!");
-    core_data_type();
+    // core_data_type();
+    //
+    // operators();
+    //
+    // scope_and_shadowing();
+    //
+    // constants();
 
-    operators();
-
-    scope_and_shadowing();
+    sh::stack_and_heap();
 }
 
 fn core_data_type() {
@@ -96,4 +109,12 @@ fn scope_and_shadowing() {
         println!("inside a = {}", a);
     }
     println!("outside a = {}", a);
+}
+
+fn constants(){
+
+    unsafe {
+        println!("{}", STATIC_UNSAFE_Z);
+    }
+
 }
