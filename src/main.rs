@@ -1,6 +1,9 @@
 #![allow(dead_code)]
 #![allow(unused_variables)]
 mod sh;
+mod control_flow;
+mod data_struct;
+mod pm;
 
 use std::mem;
 
@@ -21,7 +24,27 @@ fn main() {
     //
     // constants();
 
-    sh::stack_and_heap();
+    // sh::stack_and_heap();
+
+    // control_flow::for_loop();
+
+    // control_flow::match_statement();
+
+    // data_struct::structures();
+
+    // data_struct::enums();
+
+    // data_struct::union_test();
+
+    // data_struct::option_test();
+
+    // data_struct::array();
+
+    // data_struct::slices();
+
+    // data_struct::tuples();
+
+    pm::pattern_matching();
 }
 
 fn core_data_type() {
