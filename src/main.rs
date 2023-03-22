@@ -1,18 +1,19 @@
 #![allow(dead_code)]
 #![allow(unused_variables)]
-mod sh;
 mod control_flow;
 mod data_struct;
+mod generics;
 mod pm;
+mod sh;
 
 use std::mem;
 
 //Global variable
 const MEANING_OF_LIFE: u8 = 42; //no fixed address - prefer
 
-static STATIC_Z:i32 = 123; //Immutable is memory safe
+static STATIC_Z: i32 = 123; //Immutable is memory safe
 
-static mut STATIC_UNSAFE_Z:i32 = 123;  //Mutable is memory unsafe
+static mut STATIC_UNSAFE_Z: i32 = 123; //Mutable is memory unsafe
 
 fn main() {
     println!("Hello, world!");
@@ -44,7 +45,9 @@ fn main() {
 
     // data_struct::tuples();
 
-    pm::pattern_matching();
+    // pm::pattern_matching();
+
+    generics::generics();
 }
 
 fn core_data_type() {
@@ -69,7 +72,12 @@ fn core_data_type() {
     // usize isize
     let z: isize = 123;
     let size_of_z = mem::size_of_val(&z);
-    println!("z = {}, takes up {} bytes, {}-bit OS", z, size_of_z, size_of_z * 8);
+    println!(
+        "z = {}, takes up {} bytes, {}-bit OS",
+        z,
+        size_of_z,
+        size_of_z * 8
+    );
 
     // Character
     let d: char = 'x';
@@ -85,7 +93,6 @@ fn core_data_type() {
 }
 
 fn operators() {
-
     //arithmetic
     let mut a = 2 + 3 * 4; //+-*
     println!("{}", a);
@@ -104,11 +111,11 @@ fn operators() {
 
     // bitwise *only for integer
     let c = 1 | 2; // | OR   & AND  ^ XOR  ! NOR
-                        // 01 OR 10 = 11 == 3_10
+                   // 01 OR 10 = 11 == 3_10
     println!("1|2 = {}", c);
 
     // Shift
-    let two_to_10 =  1 << 10; // >>
+    let two_to_10 = 1 << 10; // >>
     println!("2^10 = {}", two_to_10);
 
     // Logical > <= >= ==
@@ -120,7 +127,6 @@ fn operators() {
 fn scope_and_shadowing() {
     let a = 123;
     println!("a = {}", a);
-
 
     //Create a scope
     {
@@ -134,10 +140,8 @@ fn scope_and_shadowing() {
     println!("outside a = {}", a);
 }
 
-fn constants(){
-
+fn constants() {
     unsafe {
         println!("{}", STATIC_UNSAFE_Z);
     }
-
 }
