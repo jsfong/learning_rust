@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 #![allow(unused_variables)]
+mod collections_type;
 mod control_flow;
 mod data_struct;
 mod generics;
@@ -47,7 +48,9 @@ fn main() {
 
     // pm::pattern_matching();
 
-    generics::generics();
+    // generics::generics();
+
+    collections_type::vectors();
 }
 
 fn core_data_type() {
