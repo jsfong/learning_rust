@@ -50,7 +50,11 @@ fn main() {
 
     // generics::generics();
 
-    collections_type::vectors();
+    //collections_type::vectors();
+
+    //collections_type::hashmap();
+
+    collections_type::set();
 }
 
 fn core_data_type() {
