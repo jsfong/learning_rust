@@ -54,7 +54,9 @@ fn main() {
 
     //collections_type::hashmap();
 
-    collections_type::set();
+    // collections_type::set();
+
+    collections_type::iterator();
 }
 
 fn core_data_type() {

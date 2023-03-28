@@ -121,3 +121,32 @@ pub fn set() {
 
     //difference
 }
+
+pub fn iterator() {
+    let mut vec = vec![3, 2, 1];
+
+    for x in &vec {
+        //use ref to borrow without changing the vec
+        println!("{}", x);
+    }
+
+    for x in vec.iter() {
+        //to let x to be mut use vec.iter_mut()
+        println!("We got {}", x); //x is immutable
+    }
+
+    for x in vec.iter_mut() {
+        *x += 2;
+    }
+    println!("{:?}", vec);
+
+    for x in vec.iter().rev() {
+        println!("in reverse: {}", x);
+    }
+
+    let mut vec2 = vec![1, 2, 3];
+
+    // let it = vec.into_iter();
+    vec2.extend(vec);
+    println!("{:?}", vec2);
+}
